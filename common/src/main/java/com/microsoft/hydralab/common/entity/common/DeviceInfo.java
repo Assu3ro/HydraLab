@@ -3,6 +3,7 @@
 package com.microsoft.hydralab.common.entity.common;
 
 import com.microsoft.hydralab.common.entity.agent.MobileDevice;
+import com.microsoft.hydralab.common.management.device.DeviceType;
 import com.microsoft.hydralab.common.management.device.TestDeviceManager;
 import com.microsoft.hydralab.common.management.listener.MobileDeviceState;
 import lombok.Getter;
@@ -49,7 +50,7 @@ public class DeviceInfo extends MobileDevice {
     private transient File screenshotImageFile;
     private transient File pcScreenshotImageFile;
     private transient boolean adbTimeout = false;
-    private String type;
+    private DeviceType type;
 
     public DeviceInfo() {
         this.testDeviceManager = null;

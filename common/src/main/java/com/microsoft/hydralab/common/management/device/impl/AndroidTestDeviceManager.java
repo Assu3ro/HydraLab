@@ -522,7 +522,7 @@ public class AndroidTestDeviceManager extends TestDeviceManager {
             adbDevice.setDeviceId(deviceId);
             adbDevice.setScreenDensity(device.getDensity());
             adbDevice.setName(device.getName());
-            adbDevice.setType(DeviceType.ANDROID.name());
+            adbDevice.setType(DeviceType.ANDROID);
         }
     }
 

@@ -3,18 +3,44 @@
 
 package com.microsoft.hydralab.common.management.device;
 
+import java.util.Set;
+
 public enum DeviceType {
     // Define device type and bean name
-    ANDROID("androidDeviceManager"),
-    WINDOWS("windowsDeviceManager"),
-    IOS("iosDeviceManager");
-    String beanName;
+    ANDROID {
+        @Override
+        public Set<String> getSuffixes() {
+            return Set.of("apk");
+        }
 
-    DeviceType(String beanName) {
-        this.beanName = beanName;
-    }
+        @Override
+        public String getDriverName() {
+            return null;
+        }
+    },
+    WINDOWS {
+        @Override
+        public Set<String> getSuffixes() {
+            return Set.of("appx", "appxbundle");
+        }
 
-    public String getBeanName() {
-        return beanName;
-    }
+        @Override
+        public String getDriverName() {
+            return null;
+        }
+    },
+    IOS {
+        @Override
+        public Set<String> getSuffixes() {
+            return Set.of("ipa", "app");
+        }
+
+        @Override
+        public String getDriverName() {
+            return null;
+        }
+    };
+
+    public abstract Set<String> getSuffixes();
+    public abstract String getDriverName();
 }

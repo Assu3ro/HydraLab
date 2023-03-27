@@ -246,7 +246,7 @@ public class IOSTestDeviceManager extends TestDeviceManager {
         deviceInfo.setOsSDKInt("");
         deviceInfo.setScreenDensity(0);
         deviceInfo.setScreenSize("");
-        deviceInfo.setType(DeviceType.IOS.name());
+        deviceInfo.setType(DeviceType.IOS);
         updateDeviceDetailByUdid(deviceInfo, udid);
         return deviceInfo;
     }
